@@ -3,7 +3,7 @@ body {
   margin: 0;
   background: #f8fcff;
   color: #333;
-  text-align: center;
+  /* MODIFIED: text-align is removed from body for better paragraph alignment */
 }
 
 nav {
@@ -30,9 +30,36 @@ section {
   padding: 50px;
 }
 
+/* NEW: Rule to keep main titles centered */
+section h1, section h3 {
+  text-align: center;
+}
+
+/* NEW: Styles for the two-column "About Me" layout */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-text {
+  flex: 2; /* Lets the text take up more space */
+  text-align: left; /* Aligns text for readability */
+}
+
+.about-photo {
+  flex: 1;
+}
+
+/* MODIFIED: Updated styles for the profile picture */
 .profile-pic {
   width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin-top: 20px;
+  height: 250px; /* You can adjust this to change the aspect ratio */
+  border-radius: 15px; /* Changed from 50% to make it a rectangle */
+  object-fit: cover; /* Ensures the image fills the space without distortion */
+  margin: 0; /* Spacing is now handled by the flex container */
 }
