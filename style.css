@@ -1,65 +1,147 @@
+/* --- Font Size Control Panel --- */
+:root {
+  /* Change these values to adjust font sizes everywhere */
+  --font-size-h1: 2rem;    /* For the main name heading */
+  --font-size-h2: 1.8rem;    /* For section titles like "About Me" */
+  --font-size-h3: 1.4rem;    /* For subtitles like "Ph.D. Candidate" */
+  --font-size-p: 1.2rem;     /* For all paragraph text */
+  --font-size-nav: 1.5rem;   /* For navigation links */
+}
+
+/* --- Main Layout and Typography --- */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'EB Garamond', serif;
   margin: 0;
-  background: #f8fcff;
+  background: #f5f5f5db;
+  background-image: url('texture.png');   /* This applies your texture */
   color: #333;
-  /* MODIFIED: text-align is removed from body for better paragraph alignment */
+  font-size: var(--font-size-p); /* Sets the default paragraph font size */
+  line-height: 1.8; /* Improves readability for all text */
+}
+
+/* --- Header & Navigation Bar --- */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #ffffff;
+  background-image: url('texture.png');   /* This applies your texture */
+  
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-logo {
+  height: 50px;
+  width: auto;
+}
+
+.header-name {
+  font-size: var(--font-size-h1);
+  margin: 0;
+  font-weight: 400;
+  color: #333;
 }
 
 nav {
-  background: #002b5c;
-  padding: 10px 0;
+  background-color: transparent;
+  margin-left: auto; /* This pushes the nav to the right edge */
 }
 
 nav ul {
   list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+  display: inline-flex;
+  gap: 35px;
   margin: 0;
   padding: 0;
 }
 
 nav ul li a {
+  font-size: var(--font-size-nav);
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #1e1d1d;
+  font-weight: 400;
+  transition: color 0.2s ease-in-out;
 }
 
+nav ul li a:hover {
+  color: #000;
+}
+
+nav ul li a.active {
+  color: #000;
+  font-weight: 550;
+}
+
+/* --- Content Sections & Animation --- */
 section {
   padding: 50px;
+  animation: fadeIn 0.7s ease-out forwards;
 }
 
-/* NEW: Rule to keep main titles centered */
-section h1, section h3 {
-  text-align: center;
+/* Style for links within the main content sections */
+section p a, section li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0056b3;
 }
 
-/* NEW: Styles for the two-column "About Me" layout */
+section p a:hover, section li a:hover {
+  text-decoration: underline;
+}
+
+/* --- Two-Column "About Me" Layout --- */
 .about-container {
+  background-color: #ffffff;
+  background-image: url('texture.png');
+  border: 8px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 50px;
-  padding: 20px 50px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.about-text {
-  flex: 2; /* Lets the text take up more space */
-  text-align: left; /* Aligns text for readability */
+.about-text h3 {
+  font-size: var(--font-size-h3);
+  font-weight: normal;
+  margin-top: 0;
 }
 
-.about-photo {
-  flex: 1;
+.about-text h2 {
+  font-size: var(--font-size-h2);
 }
 
-/* MODIFIED: Updated styles for the profile picture */
+.about-text p {
+  font-size: var(--font-size-p);
+  text-align: justify;
+}
+
+/* --- Profile Picture Styling --- */
 .profile-pic {
   width: 200px;
-  height: 250px; /* You can adjust this to change the aspect ratio */
-  border-radius: 15px; /* Changed from 50% to make it a rectangle */
-  object-fit: cover; /* Ensures the image fills the space without distortion */
-  margin: 0; /* Spacing is now handled by the flex container */
+  height: 250px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin: 0;
+}
+
+/* --- Page Load Animation Definition --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
