@@ -3,27 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Contact</title>
+  <title>Harshit Kumar Sharma - Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    section .contact-info {
+      font-size: 1.15rem; /* <-- This will now work */
+    }
+  </style>
+
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <header>
+    <div class="logo-container">
+      <img src="logo.jpg" alt="My Logo" class="header-logo">
+      <h1 class="header-name">Harshit Kumar Sharma</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="CV.html">CV</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Contact Section -->
   <section>
-    <h1>Contact</h1>
-    <p>Email: your.email@iitk.ac.in</p>
-    <p>GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourusername">linkedin.com/in/yourusername</a></p>
+    <h2>Contact Information</h2>
+    <p class="contact-info">This is where you can place your email, office address, and other contact details.</p>
   </section>
 
 </body>
