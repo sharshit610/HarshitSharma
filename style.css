@@ -265,7 +265,9 @@ Mobile Responsive Styles
 ================================
 --- */
 @media (max-width: 768px) {
-
+  html {
+    font-size: 8px; /* This makes 1rem = 14px, (default is 16px) */
+  }
   /* 1. Adjusts header padding */
   header {
     padding: 1rem 1.5rem;
@@ -353,3 +355,4 @@ Mobile Responsive Styles
   }
 
 }
+
