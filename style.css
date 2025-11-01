@@ -409,19 +409,19 @@
     ul .publication-item {
     font-size: 1.45rem;
     position: relative;     /* <-- ADD THIS */
-    padding-left: 1.5rem;   /* <-- ADD THIS */
+    padding-left: 1rem;   /* <-- ADD THIS */
     }
 
   ul .conference-item {
     font-size: 1.45rem;
     position: relative;     /* <-- ADD THIS */
-    padding-left: 1.5rem;   /* <-- ADD THIS */
+    padding-left: 1rem;   /* <-- ADD THIS */
     }
 
   #teaching-content ul .course-item {
     font-size: 1.45rem;
     position: relative;     /* <-- ADD THIS */
-    padding-left: 1.5rem;   /* <-- ADD THIS */
+    padding-left: 1rem;   /* <-- ADD THIS */
     }
     .contact-info {
       font-size: 1.3rem;
@@ -532,4 +532,5 @@
     }
 
   }
+
 
