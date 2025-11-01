@@ -367,8 +367,8 @@ Mobile Responsive Styles
   #research-content section,
   #teaching-content section,
   #cv-content section {
-    padding-left: 1.7rem;
-    padding-right: 1.7rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   #contact-content section {
     padding: 2rem 1.7rem;
@@ -379,6 +379,7 @@ Mobile Responsive Styles
   }
 
 }
+
 
 
 
