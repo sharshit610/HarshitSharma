@@ -97,7 +97,7 @@
   }
 
   /* --- C. BODY TEXT & LISTS --- */
-
+  
   /* ADD THIS NEW RULE to hide default bullets */
   #research-content ul,
   #teaching-content ul {
@@ -117,6 +117,13 @@
   position: relative;     /* <-- ADD THIS */
   padding-left: 1.5rem;   /* <-- ADD THIS (creates space) */
   }
+
+  /* This controls the font-weight of <b> tags inside your publication list */
+  .publication-item b {
+    /* The browser's default is 700. You can set this to any value. */
+    font-weight: 600; 
+  }
+
   /* "Conferences" list items */
   ul .conference-item {
   font-size: var(--font-size-conference-item); 
@@ -355,7 +362,7 @@
     to resize the whole mobile site.
     */
     html {
-      font-size: 11px; 
+      font-size: 14px; 
     }
 
     
@@ -384,47 +391,53 @@
     main section h1,
     main section h2 {
       font-size: 2rem;   /* e.g., "Teaching Experience" */
-      font-weight: 520;
+      font-weight: 450;
     }
     .about-text h2 {
       font-size: 1.8rem; /* e.g., "About Me" */
-      font-weight: 500;
+      font-weight: 480;
     }
     .about-text h3 {
-      font-size: 1.4rem; /* e.g., "Ph.D. Candidate..." */
+      font-size: 1.5rem; /* e.g., "Ph.D. Candidate..." */
       font-weight: 400;
     }
     #teaching-content .teaching-subtitle {
       font-size: 1.7rem; /* e.g., "Teaching Assistant at..." */
-      font-weight: 500;
+      font-weight: 450;
     }
 
     /* --- C. BODY TEXT & LISTS (Mobile) --- */
     .about-text .introduction,
     .about-text .hobbies {
-      font-size: 1.5rem; /* Larger "About Me" body text */
+      font-size: 1.45rem; /* Larger "About Me" body text */
       line-height: 1.6;
-      text-align: left; /* Left-align text on mobile (no justify) */
+      text-align: justify; /* Left-align text on mobile (no justify) */
     }
     ul .publication-item {
     font-size: 1.45rem;
     position: relative;     /* <-- ADD THIS */
-    padding-left: 1rem;   /* <-- ADD THIS */
+    padding-left: 1.5rem;   /* <-- ADD THIS */
     }
 
-  ul .conference-item {
-    font-size: 1.45rem;
-    position: relative;     /* <-- ADD THIS */
-    padding-left: 1rem;   /* <-- ADD THIS */
+    /* This controls the font-weight of <b> tags on mobile */
+    .publication-item b {
+      /* Set this to match the desktop value, or choose a new one. */
+      font-weight: 600;
     }
 
-  #teaching-content ul .course-item {
+    ul .conference-item {
     font-size: 1.45rem;
     position: relative;     /* <-- ADD THIS */
-    padding-left: 1rem;   /* <-- ADD THIS */
+    padding-left: 1.5rem;   /* <-- ADD THIS */
+    }
+
+    #teaching-content ul .course-item {
+    font-size: 1.45rem;
+    position: relative;     /* <-- ADD THIS */
+    padding-left: 1.5rem;   /* <-- ADD THIS */
     }
     .contact-info {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
 
     /* Controls text alignment for all list items and contact info */
@@ -432,6 +445,24 @@
     #teaching-content ul,
     .contact-info {
       text-align: left; /* Change to 'justify' if you want */
+    }
+
+    /* This overrides the desktop bullet to make it smaller on mobile */
+    ul .publication-item::before,
+    ul .conference-item::before,
+    #teaching-content ul .course-item::before {
+
+      /* --- Sizing (Mobile) --- */
+      width: 7px;  /* Smaller: 6px (was 9px) */
+      height: 7px; /* Smaller: 6px (was 9px) */
+
+      /* --- The 3D Effect (Mobile) --- */
+      /* A simpler gradient for the smaller size */
+      background: radial-gradient(circle at 2px 2px, #666, #000); 
+
+      /* --- Alignment (Mobile) --- */
+      /* New margin-top for the 6px bullet */
+      margin-top: -3px; /* (Negative half of your 6px height) */
     }
 
     /* --- D. LINKS (Mobile) --- */
@@ -448,6 +479,13 @@
     header {
       padding: 1rem 1.5rem;
     }
+
+    #research-content ul,
+    #teaching-content ul {
+      /* This removes the browser's default 40px indentation on mobile */
+      padding-left: 0;
+    }
+
     nav {
       display: none; /* Hide the desktop nav container */
     }
@@ -532,5 +570,3 @@
     }
 
   }
-
-
