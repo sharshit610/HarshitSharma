@@ -1,7 +1,7 @@
 /* --- Font Size Control Panel --- */
 :root {
   --font-size-h1: 2rem;    /* For the main name heading */
-  --font-size-h2: 1.8rem;  /* For section titles like "About Me" */
+  --font-size-h2: 2rem;  /* For section titles like "About Me" */
   --font-size-h3: 1.4rem;  /* For subtitles like "Ph.D. Candidate" */
   --font-size-p: 1.2rem;   /* For all paragraph text */
   --font-size-nav: 1.5rem; /* For navigation links */
@@ -142,7 +142,7 @@ section p a:hover, section li a:hover {
 
 /* NEW: Rule moved from Master group */
 .about-text h2 {
-  font-size: 2rem; /* Give "About Me" its own size */
+  font-size: 1.8rem; /* Give "About Me" its own size */
 }
 
 .about-text h3 {
@@ -352,11 +352,11 @@ Mobile Responsive Styles
   #research-content section,
   #teaching-content section,
   #cv-content section {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
   }
   #contact-content section {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.6rem;
   }
   .cv-embed-container {
     max-width: 100%;
@@ -364,6 +364,7 @@ Mobile Responsive Styles
   }
 
 }
+
 
 
 
