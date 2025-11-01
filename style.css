@@ -565,10 +565,11 @@
     
     /* --- Mobile CV Embed --- */
     .cv-embed-container {
-      max-width: 100%; /* Allows it to shrink */
+      max-width: 80%; /* Allows it to shrink */
       height: 400px;
     }
 
   }
+
 
 
