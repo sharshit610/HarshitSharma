@@ -1,0 +1,275 @@
+/* --- Font Size Control Panel --- */
+:root {
+  /* Change these values to adjust font sizes everywhere */
+  --font-size-h1: 2.1rem;    /* For the main name heading */
+  --font-size-h2: 2rem;  /* For section titles like "About Me" */
+  --font-size-h3: 1.4rem;  /* For subtitles like "Ph.D. Candidate" */
+  --font-size-p: 1.2rem;   /* For all paragraph text */
+  --font-size-nav: 1.5rem; /* For navigation links */
+}
+
+/* --- Master Rule for Main Heading Weights --- */
+main h1 {
+  font-weight: 500; /* Example: Bolder */
+}
+
+main h2 {
+  font-weight: 500; /* Example: Medium */
+}
+
+main h3 {
+  font-weight: 500; /* Example: Lighter (Normal) */
+}
+
+/* --- Master Rule for Main Heading Sizes --- */
+main section h1,
+main section h2{
+    font-size: var(--font-size-h2);
+}
+
+/* --- Main Layout and Typography --- */
+body {
+  font-family: 'EB Garamond', serif;
+  margin: 0;
+  background: #f5f5f5db;
+  background-image: url('texture.png'); /* This applies your texture */
+  color: #333;
+  font-size: var(--font-size-p); /* Sets the default paragraph font size */
+  line-height: 1.8; /* Improves readability for all text */
+  overflow-y: scroll; /* Prevents layout shift when content height changes */
+}
+
+/* --- Header & Navigation Bar --- */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #ffffff;
+  background-image: url('texture.png'); /* This applies your texture */
+  
+  /* --- STICKY HEADER --- */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-logo {
+  height: 50px;
+  width: auto;
+}
+
+.header-name {
+  font-size: var(--font-size-h1);
+  margin: 0;
+  font-weight: 400;
+  color: #333;
+  font-variant: small-caps;
+}
+
+nav {
+  background-color: transparent;
+  margin-left: auto; /* This pushes the nav to the right edge */
+}
+
+nav ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  font-size: var(--font-size-nav);
+  text-decoration: none;
+  color: #424242; 
+  font-weight: 400; 
+  transition: color 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #000; /* On hover, become black */
+}
+
+nav ul li a.active {
+  color: #000; 
+}
+
+/* --- Content Sections & Animation --- */
+
+/* This rule is now applied by JS */
+.fade-in-content {
+  animation: fadeIn 0.7s ease-out forwards;
+}
+
+/* This rule hides inactive content */
+.page-content.hidden {
+  display: none;
+}
+
+section {
+  padding: 50px;
+}
+
+/* Style for links within the main content sections */
+section p a, section li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+section p a:hover, section li a:hover {
+  text-decoration: underline;
+}
+
+/* --- Page: Home / "About Me" Layout --- */
+.about-container {
+  background-color: #ffffff;
+  background-image: url('texture.png');
+  border: 8px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 30px 60px; /* Updated padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 10px auto;
+}
+
+.about-text h2 {
+  font-size: 1.8rem; /* <-- Set any size you want here */
+}
+
+.about-text h3 {
+  font-size: var(--font-size-h3);
+  font-weight: normal; /* This overrides the 'main h3' rule */
+  margin-top: 0;
+}
+
+.about-text p {
+  font-size: var(--font-size-p);
+  text-align: justify;
+}
+
+/* --- Profile Picture Styling --- */
+.profile-pic {
+  width: 200px;
+  height: 250px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin: 0;
+}
+
+
+/* ---
+STYLES MOVED FROM HTML FILE
+--- */
+
+/* --- Page: Home --- */
+.about-text .introduction,
+.about-text .hobbies {
+  font-size: 1.4rem; 
+  line-height: 1.6; /* Added line height */
+}
+
+/* --- Page: Research --- */
+ul .publication-item {
+  font-size: 1.32rem;
+}
+
+#research-content section {
+  padding-bottom: 10px;
+}
+#research-content section + section {
+  padding-top: 0px;
+}
+ul .conference-item {
+  font-size: 1.35rem; 
+}
+
+/* --- Page: Teaching --- */
+#teaching-content section .teaching-subtitle {
+  font-size: 1.7rem; 
+  font-weight: 500; /* Updated font weight */
+}
+
+#teaching-content ul .course-item {
+  font-size: 1.3rem; 
+}
+
+/* --- Page: CV --- */
+#cv-content section .cv-description {
+  font-size: 1.2rem; 
+}
+.cv-embed-container {
+  max-width: 600px; 
+  height: 500px;
+  margin: 20px auto 0;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(158, 150, 150, 0.134);
+}
+.cv-embed-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+ 
+/* --- Page: Contact --- */
+#contact-content h2 {
+  margin-bottom: 1rem; /* font-size rule removed */
+}
+.contact-info {
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+.contact-info i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+.contact-info a {
+  color: #0000ee;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+.fa-envelope { color: #3e201a; }
+.fa-linkedin { color: #024163; }
+.fa-envelope-open,
+.fa-envelope-circle-check,
+.fa-regular.fa-envelope { color: #3e201a; }
+
+/* --- Shared Section Padding --- */
+#research-content section,
+#teaching-content section,
+#cv-content section {
+    padding-left: 6rem;
+    padding-right: 8rem;
+    padding-top: 1.5em;
+}
+
+#contact-content section {
+    padding: 4rem 5rem;
+    padding-top: 1.5em;
+}
+
+/* --- Page Load Animation Definition --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
