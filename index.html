@@ -6,9 +6,7 @@
   <title>Harshit Kumar Sharma - Home</title>
 
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..700&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="style.css">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -19,7 +17,11 @@
       <img src="logo.png" alt="My Logo" class="header-logo">
       <h1 class="header-name">Harshit Kumar Sharma</h1>
     </div>
-    <nav>
+
+    <nav id="main-nav">
+      <button class="nav-toggle-btn" id="nav-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
       <ul>
         <li><a href="#home" data-target="home" class="nav-link">Home</a></li>
         <li><a href="#research" data-target="research" class="nav-link">Research</a></li>
@@ -28,6 +30,10 @@
         <li><a href="#contact" data-target="contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
+
+    <button class="nav-toggle-btn" id="nav-open-btn">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </header>
 
   <main>
@@ -60,7 +66,7 @@
 
     <div id="research-content" class="page-content hidden">
       <section>
-        <h1>Publication</h1>
+        <h2>Publication</h2>
         <ul>
           <li class="publication-item"><b>Sharma, H. K.</b>, & Ahmad, W. (2025). Interconnectedness and systemic risk in financial networks: Fresh evidence from India. <b><i>Emerging Markets Review</i></b>, 101373. 
             doi: <a href="https://doi.org/10.1016/j.ememar.2025.101373" target="_blank" rel="noopener noreferrer">10.1016/j.ememar.2025.101373</a>
@@ -69,7 +75,7 @@
       </section>
     
       <section>
-        <h1>Conferences</h1>
+        <h2>Conferences</h2>
         <ul>
           <li class="conference-item">4th Asian Economic Development Conference - 2025, Peking University, Beijing, China</li>
           <li class="conference-item">Young Scholars Conference - 2025, CESP JNU</li>
@@ -121,7 +127,7 @@
 
     <div id="cv-content" class="page-content hidden">
       <section>
-        <h1>Curriculum Vitae</h1>
+        <h2>Curriculum Vitae</h2>
         <div class="cv-embed-container">
           <iframe src="https://drive.google.com/file/d/1-V6w0BWe7AMMiKHebKG_xz66Dj-OUtHN/preview  ">
             Your browser does not support iframes.
@@ -132,7 +138,7 @@
 
     <div id="contact-content" class="page-content hidden">
       <section>
-        <h1>Contact Information</h1>
+        <h2>Contact Information</h2>
         <div class="contact-info">
           <p><i class="fa-solid fa-envelope"></i>
             Email: <a href="mailto:harshits21@iitk.ac.in">harshits21@iitk.ac.in</a></p>
@@ -145,69 +151,80 @@
         </div>
       </section>
     </div>
-
+    
   </main>
   
   <script>
     // Wait for the DOM to be fully loaded before running the script
     document.addEventListener('DOMContentLoaded', () => {
         
-        // Get all navigation links and page content sections
+        // --- Page Navigation Script ---
         const navLinks = document.querySelectorAll('.nav-link');
         const pageContents = document.querySelectorAll('.page-content');
 
-        // Function to handle link clicks
         function showPage(targetId) {
-            // Hide all page content sections and remove animation class
             pageContents.forEach(content => {
                 content.classList.add('hidden');
-                content.classList.remove('fade-in-content'); // Remove animation class
+                content.classList.remove('fade-in-content');
             });
             
-            // Show the target page content and add animation class
             const targetContent = document.getElementById(targetId + '-content');
             if (targetContent) {
                 targetContent.classList.remove('hidden');
-                targetContent.classList.add('fade-in-content'); // Add animation class
+                targetContent.classList.add('fade-in-content');
             }
             
-            // === SCRIPT MODIFICATION ===
-            // Update active link styling to use your site's ".active" class
             navLinks.forEach(navLink => {
-                navLink.classList.remove('active'); // Remove active class from all
+                navLink.classList.remove('active');
                 if (navLink.getAttribute('data-target') === targetId) {
-                    navLink.classList.add('active'); // Add active class to clicked link
+                    navLink.classList.add('active');
                 }
             });
 
-            // Scroll to the top of the page on navigation
             window.scrollTo(0, 0);
         }
 
-        // Add click event listeners to all navigation links
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault(); // Stop the browser from following the href
+                e.preventDefault();
                 const targetId = link.getAttribute('data-target');
                 showPage(targetId);
-                // Update the URL hash
                 window.location.hash = targetId;
             });
         });
 
-        // Check for a hash in the URL on page load
         let initialPage = 'home';
         if (window.location.hash) {
-            // Get the target ID from the hash (e.g., #research -> research)
             const hashId = window.location.hash.substring(1);
-            // Check if a content section for this hash exists
             if (document.getElementById(hashId + '-content')) {
                 initialPage = hashId;
             }
         }
-        
-        // Show the correct page (either from hash or default to 'home')
         showPage(initialPage);
+
+
+        // --- NEW: Mobile Hamburger Menu Script ---
+        const mainNav = document.getElementById('main-nav');
+        const openNavBtn = document.getElementById('nav-open-btn');
+        const closeNavBtn = document.getElementById('nav-close-btn');
+
+        // Function to open the mobile menu
+        openNavBtn.addEventListener('click', () => {
+            mainNav.classList.add('nav-open');
+        });
+
+        // Function to close the mobile menu
+        closeNavBtn.addEventListener('click', () => {
+            mainNav.classList.remove('nav-open');
+        });
+
+        // Function to close menu when a link is clicked
+        // This is important for a single-page site
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('nav-open');
+            });
+        });
     });
   </script>
 
