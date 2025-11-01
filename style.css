@@ -383,18 +383,18 @@
     }
     /* This styles the links in the pop-out overlay menu */
     #main-nav ul li a {
-      font-size: 2rem; /* Large, tappable links */
+      font-size: 2.2rem; /* Large, tappable links */
       font-weight: 450;
     }
 
     /* --- B. SECTION TITLES & SUBTITLES (Mobile) --- */
     main section h1,
     main section h2 {
-      font-size: 2rem;   /* e.g., "Teaching Experience" */
+      font-size: 2.2rem;   /* e.g., "Teaching Experience" */
       font-weight: 450;
     }
     .about-text h2 {
-      font-size: 1.8rem; /* e.g., "About Me" */
+      font-size: 1.9rem; /* e.g., "About Me" */
       font-weight: 480;
     }
     .about-text h3 {
@@ -402,19 +402,19 @@
       font-weight: 400;
     }
     #teaching-content .teaching-subtitle {
-      font-size: 1.7rem; /* e.g., "Teaching Assistant at..." */
+      font-size: 1.9rem; /* e.g., "Teaching Assistant at..." */
       font-weight: 450;
     }
 
     /* --- C. BODY TEXT & LISTS (Mobile) --- */
     .about-text .introduction,
     .about-text .hobbies {
-      font-size: 1.45rem; /* Larger "About Me" body text */
+      font-size: 1.47rem; /* Larger "About Me" body text */
       line-height: 1.6;
       text-align: justify; /* Left-align text on mobile (no justify) */
     }
     ul .publication-item {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     position: relative;     /* <-- ADD THIS */
     padding-left: 1.5rem;   /* <-- ADD THIS */
     }
@@ -426,18 +426,18 @@
     }
 
     ul .conference-item {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     position: relative;     /* <-- ADD THIS */
     padding-left: 1.5rem;   /* <-- ADD THIS */
     }
 
     #teaching-content ul .course-item {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     position: relative;     /* <-- ADD THIS */
     padding-left: 1.5rem;   /* <-- ADD THIS */
     }
     .contact-info {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
     }
 
     /* Controls text alignment for all list items and contact info */
@@ -570,4 +570,5 @@
     }
 
   }
+
 
