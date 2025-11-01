@@ -347,7 +347,8 @@ Mobile Responsive Styles
   box-shadow: none;
   padding: 0; 
   }
-  
+
+  #home-content section,
   #research-content section,
   #teaching-content section,
   #cv-content section {
@@ -363,5 +364,6 @@ Mobile Responsive Styles
   }
 
 }
+
 
 
