@@ -1,388 +1,534 @@
-/* --- Font Size Control Panel --- */
-:root {
-  --font-size-h1: 2rem;    /* For the main name heading */
-  --font-size-h2: 2rem;  /* For section titles like "About Me" */
-  --font-size-h3: 1.4rem;  /* For subtitles like "Ph.D. Candidate" */
-  --font-size-p: 1.2rem;   /* For all paragraph text */
-  --font-size-nav: 1.5rem; /* For navigation links */
-}
+  /*
+  ============================================================
+  STYLE.CSS
+  This file is divided into 6 main sections:
+  1. GLOBAL SETTINGS & FONT CONTROL PANEL
+  2. DESKTOP TYPOGRAPHY
+  3. DESKTOP LAYOUT (Header, Nav, Pages)
+  4. ANIMATIONS
+  5. MOBILE RESPONSIVE STYLES (for 768px screens and smaller)
+  6. MOBILE-ONLY TYPOGRAPHY (inside Section 5)
+  ============================================================
+  */
 
-/* --- Master Rule for Main Heading Weights --- */
-main h1 {
-  font-weight: 520;
-}
-main h2 {
-  font-weight: 500;
-}
-main h3 {
-  font-weight: 500;
-} 
+  /*
+  ============================================================
+  1. GLOBAL SETTINGS & FONT CONTROL PANEL
+  ============================================================
+  */
+  :root {
+    /* --- FONT SIZE CONTROL PANEL ---
+    This is the single source of truth for all font sizes.
+    You can edit the 'rem' values here, and they will update
+    the entire DESKTOP version of the site.
+    */
 
-/* --- Master Rule for Main Heading Sizes --- */
-main section h1,
-main section h2 {
-    font-size: var(--font-size-h2);
-}
-/* (Rule for .about-text h2 is now in the Page: Home section) */
+    /* A. Header Fonts */
+    --font-size-header-name: 2.1rem;    /* "Harshit Kumar Sharma" */
+    --font-size-nav-links: 1.6rem;   /* "Home", "Research", etc. */
 
+    /* B. Main Content Headings */
+    --font-size-section-title: 1.9rem;      /* "Teaching Experience", "Publication", etc. */
+    --font-size-about-me-title: 1.8rem;   /* "About Me" (which is slightly smaller) */
+    --font-size-subtitle: 1.4rem;           /* "Ph.D. Candidate..." */
+    --font-size-teaching-subtitle: 1.7rem;    /* "Teaching Assistant at..." */
 
-/* --- Main Layout and Typography --- */
-body {
-  font-family: 'EB Garamond', serif;
-  margin: 0;
-  background: #f5f5f5db;
-  background-image: url('texture.png');
-  color: #333;
-  font-size: var(--font-size-p);
-  line-height: 1.8;
-  overflow-y: scroll;
-}
-
-/* --- Header & Navigation Bar --- */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Ensures spacing */
-  padding: 20px 50px;
-  background-color: #ffffff;
-  background-image: url('texture.png');
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.header-logo {
-  height: 50px;
-  width: auto;
-}
-
-.header-name {
-  font-size: var(--font-size-h1);
-  margin: 0;
-  font-weight: 400;
-  color: #333;
-  font-variant: small-caps;
-}
-
-nav ul {
-  list-style: none;
-  display: inline-flex;
-  gap: 35px;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  font-size: var(--font-size-nav);
-  text-decoration: none;
-  color: #424242; 
-  font-weight: 400; 
-  transition: color 0.2s ease-in-out;
-}
-
-nav ul li a:hover {
-  color: #000;
-}
-
-nav ul li a.active {
-  color: #000; 
-}
-
-/* --- NEW: Mobile Nav Toggle Buttons --- */
-.nav-toggle-btn {
-  display: none; /* Hidden on desktop */
-  font-size: 1.8rem;
-  color: #333;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-
-/* --- Content Sections & Animation --- */
-.fade-in-content {
-  animation: fadeIn 0.7s ease-out forwards;
-}
-.page-content.hidden {
-  display: none;
-}
-section {
-  padding: 50px;
-}
-section p a, section li a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #0056b3;
-}
-section p a:hover, section li a:hover {
-  text-decoration: underline;
-}
-
-/* --- Page: Home / "About Me" Layout --- */
-.about-container {
-  background-color: #ffffff;
-  background-image: url('texture.png');
-  border: 8px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 30px 60px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-  max-width: 1100px;
-  margin: 10px auto;
-}
-
-/* NEW: Rule moved from Master group */
-.about-text h2 {
-  font-size: 1.8rem; /* Give "About Me" its own size */
-}
-
-.about-text h3 {
-  font-size: var(--font-size-h3);
-  font-weight: normal; 
-  margin-top: 0;
-}
-.about-text p {
-  font-size: var(--font-size-p);
-  text-align: justify;
-}
-
-/* --- Profile Picture Styling --- */
-.profile-pic {
-  width: 200px;
-  height: 250px;
-  border-radius: 15px;
-  object-fit: cover;
-  margin: 0;
-}
-
-/* --- STYLES MOVED FROM HTML FILE --- */
-
-/* --- Page: Home --- */
-.about-text .introduction,
-.about-text .hobbies {
-  font-size: 1.4rem; 
-  line-height: 1.6;
-}
-
-/* --- Page: Research --- */
-ul .publication-item {
-  font-size: 1.32rem;
-}
-#research-content section {
-  padding-bottom: 10px;
-}
-#research-content section + section {
-  padding-top: 0px;
-}
-ul .conference-item {
-  font-size: 1.35rem; 
-}
-
-/* --- Page: Teaching --- */
-#teaching-content section .teaching-subtitle {
-  font-size: 1.7rem; 
-  font-weight: 500;
-}
-#teaching-content ul .course-item {
-  font-size: 1.3rem; 
-}
-
-/* --- Page: CV --- */
-#cv-content section .cv-description {
-  font-size: 1.2rem; 
-}
-.cv-embed-container {
-  max-width: 600px; 
-  height: 500px;
-  margin: 20px auto 0;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 12px rgba(158, 150, 150, 0.134);
-}
-.cv-embed-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
- 
-/* --- Page: Contact --- */
-#contact-content h2 {
-  margin-bottom: 1rem;
-}
-.contact-info {
-  font-size: 1.15rem;
-  line-height: 1.8;
-}
-.contact-info i {
-  margin-right: 8px;
-  font-size: 1.2rem;
-  vertical-align: middle;
-}
-.contact-info a {
-  color: #0000ee;
-  text-decoration: none;
-}
-.contact-info a:hover {
-  text-decoration: underline;
-}
-.fa-envelope { color: #3e201a; }
-.fa-linkedin { color: #024163; }
-.fa-envelope-open,
-.fa-envelope-circle-check,
-.fa-regular.fa-envelope { color: #3e201a; }
-
-/* --- Shared Section Padding --- */
-#research-content section,
-#teaching-content section,
-#cv-content section {
-    padding-left: 6rem;
-    padding-right: 8rem;
-    padding-top: 1.5em;
-}
-#contact-content section {
-    padding: 4rem 5rem;
-    padding-top: 1.5em;
-}
-
-/* --- Page Load Animation Definition --- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-
-/* ---
-================================
-Mobile Responsive Styles 
-================================
---- */
-@media (max-width: 768px) {
-
-  html {
-    font-size: 11px; /* This makes 1rem = 14px, (default is 16px) */
+    /* C. Main Content Body Text */
+    --font-size-body-default: 1.2rem;      /* Default <p> tag size (not really used) */
+    --font-size-about-me-body: 1.4rem;     /* "I am a PhD Scholar..." */
+    --font-size-publication-item: 1.5rem;   /* Research publication list items */
+    --font-size-conference-item: 1.4rem;  /* Research conference list items */
+    --font-size-course-item: 1.4rem;      /* Teaching course list items */
+    --font-size-contact-info: 1.3rem;     /* "Email:", "LinkedIn:" text */
   }
 
-  /* 1. Adjusts header padding */
-  header {
-    padding: 1rem 1.5rem;
+  /* --- Main Body & Font Setup --- */
+  body {
+    font-family: 'EB Garamond', serif; /* Sets the default font */
+    margin: 0;
+    background: #f5f5f5db;
+    background-image: url('texture.png');
+    color: #333;
+    font-size: var(--font-size-body-default); /* Sets default text size */
+    line-height: 1.8; /* Default spacing between lines */
+    overflow-y: scroll; /* Prevents page jump when content loads */
   }
 
-  /* --- Mobile-Specific Font Size Boost --- */
-  .about-text .introduction,
-  .about-text .hobbies {
-    font-size: 1.5rem; /* Was 1.4rem */
-  }
-  
-  ul .publication-item,
-  ul .conference-item,
-  #teaching-content ul .course-item {
-    font-size: 1.5rem; /* Was ~1.3-1.35rem */
-  }
-  
-  .contact-info {
-    font-size: 1.5rem; /* Was 1.15rem */
-  }
-  /* 2. Hides the regular nav links */
-  nav ul {
-    display: none;
-  }
 
-  /* 3. Shows the Hamburger menu button */
-  #nav-open-btn {
-    display: block;
-  }
+  /*
+  ============================================================
+  2. DESKTOP TYPOGRAPHY
+  This section controls ALL font styles for the desktop site.
+  ============================================================
+  */
 
-  /* 4. Styles the mobile menu container (hidden off-screen by default) */
-  #main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 101; /* Higher than the header */
-    
-    /* This moves it off-screen to the right */
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    
-    /* Use flex to center the links */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  /* --- A. HEADER TYPOGRAPHY --- */
+  .header-name {
+    font-size: var(--font-size-header-name);
+    font-weight: 400;
+    font-variant: small-caps; /* Makes text "HARSHIT KUMAR SHARMA" */
   }
-
-  /* 5. This class is added by JS to show the menu */
-  #main-nav.nav-open {
-    transform: translateX(0);
-  }
-
-  /* 6. Shows the "Close" button inside the open menu */
-  #main-nav #nav-close-btn {
-    display: block;
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    font-size: 2.2rem;
-  }
-
-  /* 7. Re-styles the nav list for the vertical overlay */
-  #main-nav ul {
-    display: flex;
-    flex-direction: column; /* Stacks links vertically */
-    gap: 30px; /* Adds space between links */
-    align-items: center;
-  }
-
-  /* 8. Makes the links larger for tapping */
-  #main-nav ul li a {
-    font-size: 3rem;
+  nav ul li a {
+    font-size: var(--font-size-nav-links);
     font-weight: 400;
   }
-  
-  /* --- OTHER MOBILE STYLES (from Phase 1) --- */
 
-  .about-container {
-  /* This still stacks your photo and text vertically */
-  flex-direction: column;
-  gap: 30px;
-
-  /* These new lines remove all the "box" styling */
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0; 
+  /* --- B. SECTION TITLES & SUBTITLES --- */
+  /* Main section titles (H1s and H2s) */
+  main section h1,
+  main section h2 {
+    font-size: var(--font-size-section-title);
+    font-weight: 450;
+  }
+  /* "About Me" title (H2) - Overrides the rule above */
+  .about-text h2 {
+    font-size: var(--font-size-about-me-title);
+    font-weight: 500;
+  }
+  /* "Ph.D. Candidate..." subtitle (H3) */
+  .about-text h3 {
+    font-size: var(--font-size-subtitle);
+    font-weight: 400; /* Set to normal (not bold) */
+  }
+  /* "Teaching Assistant at..." subtitles (H3) */
+  #teaching-content .teaching-subtitle {
+    font-size: var(--font-size-teaching-subtitle);
+    font-weight: 450;
   }
 
-  #home-content section,
+  /* --- C. BODY TEXT & LISTS --- */
+
+  /* ADD THIS NEW RULE to hide default bullets */
+  #research-content ul,
+  #teaching-content ul {
+    list-style: none; /* Hides the original bullets */
+  }
+
+  /* "I am a PhD Scholar..." paragraphs */
+  .about-text .introduction,
+  .about-text .hobbies {
+    font-size: var(--font-size-about-me-body);
+    line-height: 1.6;
+    text-align: justify; /* Justifies text on desktop */
+  }
+  /* "Publication" list items */
+  ul .publication-item {
+  font-size: var(--font-size-publication-item);
+  position: relative;     /* <-- ADD THIS */
+  padding-left: 1.5rem;   /* <-- ADD THIS (creates space) */
+  }
+  /* "Conferences" list items */
+  ul .conference-item {
+  font-size: var(--font-size-conference-item); 
+  position: relative;     /* <-- ADD THIS */
+  padding-left: 1.5rem;   /* <-- ADD THIS */
+  }
+  /* "Teaching" course list items */
+  #teaching-content ul .course-item {
+  font-size: var(--font-size-course-item); 
+  position: relative;     /* <-- ADD THIS */
+  padding-left: 1.5rem;   /* <-- ADD THIS */
+  }
+  /* "Contact Information" text */
+  .contact-info {
+    font-size: var(--font-size-contact-info);
+    line-height: 1.8;
+  }
+
+  /* --- D. LINKS --- */
+  /* Blue, bold links inside the main content */
+  section p a, section li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0056b3;
+  }
+  section p a:hover, section li a:hover {
+    text-decoration: underline;
+  }
+
+  /* This creates the new 3D bullet for all list items */
+  ul .publication-item::before,
+  ul .conference-item::before,
+  #teaching-content ul .course-item::before {
+    content: ''; /* It's an empty box, not a text character */
+    position: absolute;
+    left: 0;
+
+    /* --- Sizing --- */
+    width: 9px;  /* Bullet size */
+    height: 9px; /* Bullet size */
+
+    /* --- The 3D Effect --- */
+    border-radius: 50%; /* Makes it a circle */
+    
+    /* This is the black 3D sphere gradient */
+    background: radial-gradient(circle at 3px 3px, #666, #000);
+    
+    /* This adds a subtle shadow */
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+
+    /* --- Alignment --- */
+    /* This vertically centers the 8px bullet in the line */
+    top: 1em;
+    margin-top: -4px; /* (This is negative half of your 8px height) */
+  }
+  /*
+  ============================================================
+  3. DESKTOP LAYOUT (Header, Nav, Pages)
+  ============================================================
+  */
+
+  /* --- Header & Navigation Bar --- */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures spacing */
+    padding: 20px 60px 20px 45px; /* top | right | bottom | left */
+    background-color: #ffffff;
+    background-image: url('texture.png');
+    position: sticky; /* Makes header "stick" to top on scroll */
+    top: 0;
+    z-index: 100;
+  }
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .header-logo {
+    height: 50px;
+    width: auto;
+  }
+  .header-name {
+    margin: 0;
+    color: #333;
+  }
+  nav ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #424242; 
+    transition: color 0.2s ease-in-out;
+  }
+  nav ul li a:hover {
+    color: #000;
+  }
+  nav ul li a.active {
+    color: #000; 
+  }
+
+  /* --- Mobile Nav Toggle Buttons --- */
+  .nav-toggle-btn {
+    display: none; /* Hidden on desktop */
+    font-size: 1.8rem;
+    color: #333;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* --- General Content Section Layout --- */
+  .fade-in-content {
+    animation: fadeIn 0.7s ease-out forwards;
+  }
+  .page-content.hidden {
+    display: none;
+  }
+  /* Default padding for all sections */
+  section {
+    padding: 50px;
+  }
+
+  /* --- Page: Home / "About Me" Box --- */
+  .about-container {
+    background-color: #ffffff;
+    background-image: url('texture.png');
+    border: 8px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px 60px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 10px auto;
+  }
+  .about-text h3 {
+    margin-top: 0;
+  }
+  .profile-pic {
+    width: 200px;
+    height: 250px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin: 0;
+  }
+
+  /* --- Page: Research (Padding override) --- */
+  #research-content section {
+    padding-bottom: 10px;
+  }
+  #research-content section + section {
+    padding-top: 0px;
+  }
+
+  /* --- Page: CV --- */
+  .cv-embed-container {
+    max-width: 600px; 
+    height: 500px;
+    margin: 20px auto 0;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(158, 150, 150, 0.134);
+  }
+  .cv-embed-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  /* --- Page: Contact --- */
+  #contact-content h2 {
+    margin-bottom: 1rem;
+  }
+  .contact-info i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+  }
+  .contact-info a {
+    color: #0000ee;
+    text-decoration: none;
+  }
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  .fa-envelope { color: #3e201a; }
+  .fa-linkedin { color: #024163; }
+  .fa-envelope-open,
+  .fa-envelope-circle-check,
+  .fa-regular.fa-envelope { color: #3e201a; }
+
+  /* --- Shared Section Padding (Overrides default 'section' padding) --- */
+  /* These sections have large, specific side padding on desktop */
   #research-content section,
   #teaching-content section,
   #cv-content section {
-    padding-left: 2rem;
-    padding-right: 2rem;
+      padding-left: 7.4rem;
+      padding-right: 10rem;
+      padding-top: 1.5em;
   }
   #contact-content section {
-    padding: 2rem 1.7rem;
-  }
-  .cv-embed-container {
-    max-width: 100%;
-    height: 400px;
+      padding-left: 7.2rem;
+      padding-right: 10rem;
+      padding-top: 1.5em;
   }
 
-}
+
+  /*
+  ============================================================
+  4. ANIMATIONS
+  ============================================================
+  */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
 
 
+  /*
+  ============================================================
+  5. MOBILE RESPONSIVE STYLES (768px and smaller)
+  ============================================================
+  */
+  @media (max-width: 768px) {
+
+    /* --- Base Mobile Font Size ---
+    This one line scales the ENTIRE website down on mobile.
+    1rem will now equal 14px (instead of 16px).
+    You can change '14px' to '13px' (smaller) or '15px' (larger)
+    to resize the whole mobile site.
+    */
+    html {
+      font-size: 14px; 
+    }
+
+    
+    /*
+    ============================================================
+    6. MOBILE-ONLY TYPOGRAPHY
+    This section controls ALL font styles for the MOBILE site.
+    Edit these values to change mobile fonts *without*
+    affecting the desktop site.
+    ============================================================
+    */
+
+    /* --- A. HEADER TYPOGRAPHY (Mobile) --- */
+    .header-name {
+      font-size: 1.8rem; /* Smaller header name on mobile */
+      font-weight: 400;
+      font-variant: small-caps;
+    }
+    /* This styles the links in the pop-out overlay menu */
+    #main-nav ul li a {
+      font-size: 2rem; /* Large, tappable links */
+      font-weight: 450;
+    }
+
+    /* --- B. SECTION TITLES & SUBTITLES (Mobile) --- */
+    main section h1,
+    main section h2 {
+      font-size: 2rem;   /* e.g., "Teaching Experience" */
+      font-weight: 520;
+    }
+    .about-text h2 {
+      font-size: 1.8rem; /* e.g., "About Me" */
+      font-weight: 500;
+    }
+    .about-text h3 {
+      font-size: 1.4rem; /* e.g., "Ph.D. Candidate..." */
+      font-weight: 400;
+    }
+    #teaching-content .teaching-subtitle {
+      font-size: 1.7rem; /* e.g., "Teaching Assistant at..." */
+      font-weight: 500;
+    }
+
+    /* --- C. BODY TEXT & LISTS (Mobile) --- */
+    .about-text .introduction,
+    .about-text .hobbies {
+      font-size: 1.5rem; /* Larger "About Me" body text */
+      line-height: 1.6;
+      text-align: left; /* Left-align text on mobile (no justify) */
+    }
+    ul .publication-item {
+    font-size: 1.45rem;
+    position: relative;     /* <-- ADD THIS */
+    padding-left: 1.5rem;   /* <-- ADD THIS */
+    }
+
+  ul .conference-item {
+    font-size: 1.45rem;
+    position: relative;     /* <-- ADD THIS */
+    padding-left: 1.5rem;   /* <-- ADD THIS */
+    }
+
+  #teaching-content ul .course-item {
+    font-size: 1.45rem;
+    position: relative;     /* <-- ADD THIS */
+    padding-left: 1.5rem;   /* <-- ADD THIS */
+    }
+    .contact-info {
+      font-size: 1.3rem;
+    }
+
+    /* Controls text alignment for all list items and contact info */
+    #research-content ul,
+    #teaching-content ul,
+    .contact-info {
+      text-align: left; /* Change to 'justify' if you want */
+    }
+
+    /* --- D. LINKS (Mobile) --- */
+    /* This rule is inherited from desktop, no change needed */
 
 
+    /*
+    ============================================================
+    MOBILE LAYOUT
+    ============================================================
+    */
 
+    /* --- Header & Mobile Navigation Layout --- */
+    header {
+      padding: 1rem 1.5rem;
+    }
+    nav {
+      display: none; /* Hide the desktop nav container */
+    }
+    #nav-open-btn {
+      display: block; /* Show the hamburger (☰) button */
+    }
 
+    /* This is the pop-out menu overlay */
+    #main-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f5f5f5db;
+      background-image: url('texture.png'); /* This adds the texture */
+      z-index: 101;
+      transform: translateX(100%); /* Hides it off-screen to the right */
+      transition: transform 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    /* This class is added by JavaScript to show the menu */
+    #main-nav.nav-open {
+      transform: translateX(0); /* Slides menu into view */
+    }
+    /* This is the "X" button */
+    #main-nav #nav-close-btn {
+      display: block;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 2.2rem;
+    }
+    /* This styles the list inside the pop-out menu */
+    #main-nav ul {
+      display: flex;
+      flex-direction: column; /* Stacks links vertically */
+      gap: 30px;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
+    /* --- Mobile Page Layout --- */
+    
+    /* Remove the "About Me" box styling on mobile */
+    .about-container {
+      flex-direction: column; /* Stacks photo/text vertically */
+      gap: 30px;
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 0; 
+    }
+    
+    /* --- Mobile Section Padding --- */
+    /* This overrides the default 'section' padding and the
+      large desktop padding rules to create a clean,
+      narrow column for text.
+    */
+    #home-content section,
+    #research-content section,
+    #teaching-content section,
+    #cv-content section {
+      padding-left: 2.5rem;  /* Main side padding for text */
+      padding-right: 2.5rem; /* Main side padding for text */
+      padding-top: 1.5em;
+      padding-bottom: 1.5em;
+    }
+    #contact-content section {
+      padding: 2rem 2.5rem; /* Matches the padding above */
+    }
+    
+    /* --- Mobile CV Embed --- */
+    .cv-embed-container {
+      max-width: 100%; /* Allows it to shrink */
+      height: 400px;
+    }
+
+  }
