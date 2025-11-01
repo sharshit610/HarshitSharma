@@ -265,9 +265,11 @@ Mobile Responsive Styles
 ================================
 --- */
 @media (max-width: 768px) {
+
   html {
-    font-size: 8px; /* This makes 1rem = 14px, (default is 16px) */
+    font-size: 14px; /* This makes 1rem = 14px, (default is 16px) */
   }
+
   /* 1. Adjusts header padding */
   header {
     padding: 1rem 1.5rem;
@@ -335,9 +337,15 @@ Mobile Responsive Styles
   /* --- OTHER MOBILE STYLES (from Phase 1) --- */
 
   .about-container {
-    flex-direction: column;
-    gap: 30px;
-    padding: 1.5rem;
+  /* This still stacks your photo and text vertically */
+  flex-direction: column;
+  gap: 30px;
+
+  /* These new lines remove all the "box" styling */
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0; 
   }
   
   #research-content section,
@@ -355,4 +363,3 @@ Mobile Responsive Styles
   }
 
 }
-
