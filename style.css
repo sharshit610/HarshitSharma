@@ -275,6 +275,21 @@ Mobile Responsive Styles
     padding: 1rem 1.5rem;
   }
 
+  /* --- Mobile-Specific Font Size Boost --- */
+  .about-text .introduction,
+  .about-text .hobbies {
+    font-size: 1.5rem; /* Was 1.4rem */
+  }
+  
+  ul .publication-item,
+  ul .conference-item,
+  #teaching-content ul .course-item {
+    font-size: 1.45rem; /* Was ~1.3-1.35rem */
+  }
+  
+  .contact-info {
+    font-size: 1.3rem; /* Was 1.15rem */
+  }
   /* 2. Hides the regular nav links */
   nav ul {
     display: none;
@@ -364,6 +379,7 @@ Mobile Responsive Styles
   }
 
 }
+
 
 
 
