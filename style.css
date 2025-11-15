@@ -377,7 +377,7 @@
 
     /* --- A. HEADER TYPOGRAPHY (Mobile) --- */
     .header-name {
-      font-size: 1.8rem; /* Smaller header name on mobile */
+      font-size: 1.9rem; /* Smaller header name on mobile */
       font-weight: 400;
       font-variant: small-caps;
     }
@@ -570,6 +570,7 @@
     }
 
   }
+
 
 
 
