@@ -377,8 +377,8 @@
 
     /* --- A. HEADER TYPOGRAPHY (Mobile) --- */
     .header-name {
-      font-size: 1.9rem; /* Smaller header name on mobile */
-      font-weight: 400;
+      font-size: 2rem; /* Smaller header name on mobile */
+      font-weight: 450;
       font-variant: small-caps;
     }
     /* This styles the links in the pop-out overlay menu */
@@ -570,6 +570,7 @@
     }
 
   }
+
 
 
 
