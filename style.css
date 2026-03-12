@@ -84,11 +84,14 @@
   .about-text h2 {
     font-size: var(--font-size-about-me-title);
     font-weight: 500;
+    margin-top: 0px;    /* <-- Pulls "About Me" UP closer to the subtitle */
+    margin-bottom: 7px; /* <-- Pulls the paragraph UP closer to "About Me" */
   }
   /* "Ph.D. Candidate..." subtitle (H3) */
   .about-text h3 {
     font-size: var(--font-size-subtitle);
     font-weight: 400; /* Set to normal (not bold) */
+    margin-bottom: 18px;
   }
   /* "Teaching Assistant at..." subtitles (H3) */
   #teaching-content .teaching-subtitle {
@@ -108,7 +111,7 @@
   .about-text .introduction,
   .about-text .hobbies {
     font-size: var(--font-size-about-me-body);
-    line-height: 1.6;
+    line-height: 1.4;
     text-align: justify; /* Justifies text on desktop */
     text-justify: inter-word;
   }
@@ -252,24 +255,33 @@
     padding: 50px;
   }
 
+  #home-content section {
+    min-height: calc(100vh - 105px); 
+    display: flex;
+    align-items: center;      /* Centers vertically */
+    justify-content: center;  /* Centers horizontally */
+    padding: 0;               /* <-- This removes the extra padding causing the scroll! */
+    margin: 0; 
+    box-sizing: border-box; 
+    overflow: hidden;
+  }
+
   /* --- Page: Home / "About Me" Box --- */
   .about-container {
     background-color: #ffffff;
     background-image: url('texture.png');
     border: 8px solid #e0e0e0;
     border-radius: 8px;
-    padding: 30px 60px;
+    padding: 5px 60px 30px 60px; /* Values are: Top | Right | Bottom | Left */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: flex-start;
     justify-content: center;
     gap: 60px;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 0;
   }
-  .about-text h3 {
-    margin-top: 0;
-  }
+
   .profile-pic {
     background-color: #dcdcdc;
     width: 245px;
@@ -277,7 +289,7 @@
     border-radius: 0px;
     object-fit: cover;
     margin: 0;
-    margin-top: 148px;
+    margin-top: 160px;
   }
 
   /* --- Page: Research (Padding override) --- */
@@ -389,7 +401,7 @@
     }
     .about-text h3 {
       font-size: 1.5rem; /* e.g., "Ph.D. Candidate..." */
-      font-weight: 400;
+      font-weight: 400; 
     }
     #teaching-content .teaching-subtitle {
       font-size: 1.9rem; /* e.g., "Teaching Assistant at..." */
