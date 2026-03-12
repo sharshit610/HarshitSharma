@@ -110,6 +110,7 @@
     font-size: var(--font-size-about-me-body);
     line-height: 1.6;
     text-align: justify; /* Justifies text on desktop */
+    text-justify: inter-word;
   }
   /* "Publication" list items */
   ul .publication-item {
@@ -401,6 +402,7 @@
       font-size: 1.47rem; /* Larger "About Me" body text */
       line-height: 1.6;
       text-align: justify; /* Left-align text on mobile (no justify) */
+      text-justify: inter-word;
     }
     ul .publication-item {
     font-size: 1.5rem;
@@ -527,12 +529,23 @@
     /* Remove the "About Me" box styling on mobile */
     .about-container {
       flex-direction: column; /* Stacks photo/text vertically */
+      align-items: center; /* <-- ADD THIS: Centers items horizontally on mobile */
       gap: 30px;
       background: none;
       border: none;
       box-shadow: none;
       padding: 0; 
     }
+
+    /* Mobile Profile Picture Adjustments */
+    .profile-pic {
+    width: 250px; /* slightly narrower width */
+    aspect-ratio: 3 / 4; /* Makes the box taller than it is wide */
+    object-fit: cover; /* This is the magic rule that crops the sides instead of squishing */
+    object-position: center; /* Keeps your face perfectly in the middle */
+    border-radius: 0; 
+    margin-top: 0px; /* Keeps your alignment with the text */
+  }
     
     /* --- Mobile Section Padding --- */
     /* This overrides the default 'section' padding and the
